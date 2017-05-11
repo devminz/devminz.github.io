@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Devminz TechBlog</title><link>https://devminz.github.io/</link><description>Techology Blog by Devminz</description><atom:link href="https://devminz.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><copyright>Contents © 2017 &lt;a href="mailto:devminz.github.io"&gt;Devminz&lt;/a&gt; </copyright><lastBuildDate>Thu, 11 May 2017 10:48:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>kerl : Tool for Erlang/OTP version management</title><link>https://devminz.github.io/posts/kerl-tool-for-erlangotp-version-management/</link><dc:creator>Devminz</dc:creator><description>&lt;div&gt;&lt;p&gt;Like rvm for Ruby and virtualenv for Python we have now kerl for Erlang/OTP.
+kerl allows to install and manage multiple OTP versions. kerl is written as
+a shell script and does not depend on Erlang.&lt;/p&gt;
+&lt;p&gt;The Github Repo is  &lt;a class="reference external" href="https://github.com/yrashk/kerl"&gt;https://github.com/yrashk/kerl&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Installing kerl&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_0ef722af7ff0414abd1ad969f00052a9-1"&gt;&lt;/a&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /usr/local/bin
+&lt;a name="rest_code_0ef722af7ff0414abd1ad969f00052a9-2"&gt;&lt;/a&gt;$ sudo curl -O https://raw.githubusercontent.com/yrashk/kerl/master/kerl
+&lt;a name="rest_code_0ef722af7ff0414abd1ad969f00052a9-3"&gt;&lt;/a&gt;$ sudo chmod a+x kerl
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;List available releases&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6f902903b3b2460290f20a263ae1f965-1"&gt;&lt;/a&gt;$ kerl list releases
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Update list of available releases&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_518f0a8e4e9b4c41964837ce79f095eb-1"&gt;&lt;/a&gt;$ kerl update releases
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Build a release&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6d2d7bf7d15e4d6980283f99138195af-1"&gt;&lt;/a&gt;$ kerl  build  &lt;span class="m"&gt;17&lt;/span&gt;.0  myotp_17_0
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Listing available builds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_07185409beca45f2845d3b59c7340ef1-1"&gt;&lt;/a&gt;$ kerl  list builds
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Installing a build&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_43652bfe58ec495b81ec936ab7e54dff-1"&gt;&lt;/a&gt;$ mkdir -p /home/me/my_otp_installations/17_0
+&lt;a name="rest_code_43652bfe58ec495b81ec936ab7e54dff-2"&gt;&lt;/a&gt;$ kerl  install myotp_17_0 /home/me/my_otp_installations/17_0
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Listing installations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_9abccaa26baa487c99ab72ae60c61fcb-1"&gt;&lt;/a&gt;$ kerl list installations
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Use/activate a version of OTP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_fa6eb9b946864b83953f72c8b7f919c8-1"&gt;&lt;/a&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; /path/to/installation/dir/activate
+&lt;a name="rest_code_fa6eb9b946864b83953f72c8b7f919c8-2"&gt;&lt;/a&gt;$ &lt;span class="c1"&gt;# Example&lt;/span&gt;
+&lt;a name="rest_code_fa6eb9b946864b83953f72c8b7f919c8-3"&gt;&lt;/a&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; /home/me/my_otp_installations/17_0/activate
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Deactivate/stop using for now, a version of OTP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ddc012d0f17f42fcb88ac0f14179c367-1"&gt;&lt;/a&gt;$ kerl_deactivate
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Find out which OTP version is active&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_cca13c5618c5429c961d8a499fc20511-1"&gt;&lt;/a&gt;$ kerl active
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Get details kerl installation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b3b3d9dd39434244a8f906b20ae3127e-1"&gt;&lt;/a&gt;$ kerl status
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Delete a build&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_35356f6e8cfd48e68ab69472ebab1fb4-1"&gt;&lt;/a&gt;$ kerl delete build myotp_17_0
+&lt;/pre&gt;&lt;/div&gt;</description><guid>https://devminz.github.io/posts/kerl-tool-for-erlangotp-version-management/</guid><pubDate>Thu, 11 May 2017 10:47:07 GMT</pubDate></item></channel></rss>

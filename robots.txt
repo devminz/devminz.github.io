@@ -1,0 +1,4 @@
+Sitemap: https://devminz.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: devminz.github.io
