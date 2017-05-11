@@ -132,19 +132,32 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 #          with a ``/``, otherwise end them with ``/index.html`` — or
 #          else they won’t be highlighted when active.
 
+# NAVIGATION_LINKS = {
+#     DEFAULT_LANG: (
+#         ("/archive.html", "Archive"),
+#         ("/categories/", "Tags"),
+#         ("/rss.xml", "RSS feed"),
+#     ),
+# }
+
 NAVIGATION_LINKS = {
-    DEFAULT_LANG: (
-        ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
-    ),
+   DEFAULT_LANG: (
+       ('/index.html', 'Home', 'icon-home'),
+       ('/archive.html', 'Archives', 'icon-folder-open-alt'),
+       ('/categories/index.html', 'Tags', 'icon-tags'),
+       ('/rss.xml', 'RSS', 'icon-rss'),
+       # ('https://getnikola.com', 'About me', 'icon-user'),
+       ('https://twitter.com/devminz', '@Twitter', 'icon-twitter'),
+       ('https://github.com/devminz', '@Github', 'icon-github'),
+   )
 }
 
 # Name of the theme to use.
 # THEME = "bootstrap3"   # the default theme
 # THEME = "lanyon"
-THEME = "bootstrap3"      
-
+# zen-jinja theme is good : https://themes.getnikola.com/v7/zen/demo/
+# THEME = "bootstrap3"
+THEME = "zen-jinja"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
