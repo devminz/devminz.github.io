@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://devminz.github.io/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/kerl-tool-for-erlangotp-version-management/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/devops/kerl-tool-for-erlangotp-version-management/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -60,15 +60,15 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/kerl-tool-for-erlangotp-version-management/" class="u-url">kerl : Tool for Erlang/OTP version management</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/devops/kerl-tool-for-erlangotp-version-management/" class="u-url">kerl : Tool for Erlang/OTP version management</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Devminz
             </span></p>
-            <p class="dateline"><a href="posts/kerl-tool-for-erlangotp-version-management/" rel="bookmark"><time class="published dt-published" datetime="2017-05-11T16:17:07+05:30" title="2017-05-11 16:17">2017-05-11 16:17</time></a></p>
+            <p class="dateline"><a href="posts/devops/kerl-tool-for-erlangotp-version-management/" rel="bookmark"><time class="published dt-published" datetime="2017-05-11T16:17:07+05:30" title="2017-05-11 16:17">2017-05-11 16:17</time></a></p>
                 <p class="commentline">
         
-    <a href="posts/kerl-tool-for-erlangotp-version-management/#disqus_thread" data-disqus-identifier="cache/posts/kerl-tool-for-erlangotp-version-management.html">Comments</a>
+    <a href="posts/devops/kerl-tool-for-erlangotp-version-management/#disqus_thread" data-disqus-identifier="cache/posts/devops/kerl-tool-for-erlangotp-version-management.html">Comments</a>
 
 
         </p>
@@ -82,67 +82,67 @@ a shell script and does not depend on Erlang.</p>
 <ul class="simple">
 <li>Installing kerl</li>
 </ul>
-<pre class="code bash"><a name="rest_code_0ef722af7ff0414abd1ad969f00052a9-1"></a>$ <span class="nb">cd</span> /usr/local/bin
-<a name="rest_code_0ef722af7ff0414abd1ad969f00052a9-2"></a>$ sudo curl -O https://raw.githubusercontent.com/yrashk/kerl/master/kerl
-<a name="rest_code_0ef722af7ff0414abd1ad969f00052a9-3"></a>$ sudo chmod a+x kerl
+<pre class="code bash"><a name="rest_code_b9ebc6124f5c414f95ad0e682ea0ad6f-1"></a>$ <span class="nb">cd</span> /usr/local/bin
+<a name="rest_code_b9ebc6124f5c414f95ad0e682ea0ad6f-2"></a>$ sudo curl -O https://raw.githubusercontent.com/yrashk/kerl/master/kerl
+<a name="rest_code_b9ebc6124f5c414f95ad0e682ea0ad6f-3"></a>$ sudo chmod a+x kerl
 </pre>
 <ul class="simple">
 <li>List available releases</li>
 </ul>
-<pre class="code bash"><a name="rest_code_6f902903b3b2460290f20a263ae1f965-1"></a>$ kerl list releases
+<pre class="code bash"><a name="rest_code_021f39a774c6470fb5a4f2abc29edaa8-1"></a>$ kerl list releases
 </pre>
 <ul class="simple">
 <li>Update list of available releases</li>
 </ul>
-<pre class="code bash"><a name="rest_code_518f0a8e4e9b4c41964837ce79f095eb-1"></a>$ kerl update releases
+<pre class="code bash"><a name="rest_code_524545767b0f4bdcb18c522dbe8a5766-1"></a>$ kerl update releases
 </pre>
 <ul class="simple">
 <li>Build a release</li>
 </ul>
-<pre class="code bash"><a name="rest_code_6d2d7bf7d15e4d6980283f99138195af-1"></a>$ kerl  build  <span class="m">17</span>.0  myotp_17_0
+<pre class="code bash"><a name="rest_code_64845aa0a2f741adb71baaa2ef5d61d0-1"></a>$ kerl  build  <span class="m">17</span>.0  myotp_17_0
 </pre>
 <ul class="simple">
 <li>Listing available builds</li>
 </ul>
-<pre class="code bash"><a name="rest_code_07185409beca45f2845d3b59c7340ef1-1"></a>$ kerl  list builds
+<pre class="code bash"><a name="rest_code_b2d96e4ac2a74376bcd8f0bd41130f7b-1"></a>$ kerl  list builds
 </pre>
 <ul class="simple">
 <li>Installing a build</li>
 </ul>
-<pre class="code bash"><a name="rest_code_43652bfe58ec495b81ec936ab7e54dff-1"></a>$ mkdir -p /home/me/my_otp_installations/17_0
-<a name="rest_code_43652bfe58ec495b81ec936ab7e54dff-2"></a>$ kerl  install myotp_17_0 /home/me/my_otp_installations/17_0
+<pre class="code bash"><a name="rest_code_cdb90dd0c713409480c2a4c2c5209cee-1"></a>$ mkdir -p /home/me/my_otp_installations/17_0
+<a name="rest_code_cdb90dd0c713409480c2a4c2c5209cee-2"></a>$ kerl  install myotp_17_0 /home/me/my_otp_installations/17_0
 </pre>
 <ul class="simple">
 <li>Listing installations</li>
 </ul>
-<pre class="code bash"><a name="rest_code_9abccaa26baa487c99ab72ae60c61fcb-1"></a>$ kerl list installations
+<pre class="code bash"><a name="rest_code_ca4b4e35b1be47d5a27701ffcf90d9c6-1"></a>$ kerl list installations
 </pre>
 <ul class="simple">
 <li>Use/activate a version of OTP</li>
 </ul>
-<pre class="code bash"><a name="rest_code_fa6eb9b946864b83953f72c8b7f919c8-1"></a>$ <span class="nb">source</span> /path/to/installation/dir/activate
-<a name="rest_code_fa6eb9b946864b83953f72c8b7f919c8-2"></a>$ <span class="c1"># Example</span>
-<a name="rest_code_fa6eb9b946864b83953f72c8b7f919c8-3"></a>$ <span class="nb">source</span> /home/me/my_otp_installations/17_0/activate
+<pre class="code bash"><a name="rest_code_b641510af7ad483e9db02bc4db5681c0-1"></a>$ <span class="nb">source</span> /path/to/installation/dir/activate
+<a name="rest_code_b641510af7ad483e9db02bc4db5681c0-2"></a>$ <span class="c1"># Example</span>
+<a name="rest_code_b641510af7ad483e9db02bc4db5681c0-3"></a>$ <span class="nb">source</span> /home/me/my_otp_installations/17_0/activate
 </pre>
 <ul class="simple">
 <li>Deactivate/stop using for now, a version of OTP</li>
 </ul>
-<pre class="code bash"><a name="rest_code_ddc012d0f17f42fcb88ac0f14179c367-1"></a>$ kerl_deactivate
+<pre class="code bash"><a name="rest_code_37a8af97040f437ab8377972162a6185-1"></a>$ kerl_deactivate
 </pre>
 <ul class="simple">
 <li>Find out which OTP version is active</li>
 </ul>
-<pre class="code bash"><a name="rest_code_cca13c5618c5429c961d8a499fc20511-1"></a>$ kerl active
+<pre class="code bash"><a name="rest_code_c9a891e70d484ac384f4fe9e8be54361-1"></a>$ kerl active
 </pre>
 <ul class="simple">
 <li>Get details kerl installation</li>
 </ul>
-<pre class="code bash"><a name="rest_code_b3b3d9dd39434244a8f906b20ae3127e-1"></a>$ kerl status
+<pre class="code bash"><a name="rest_code_5892e10121e24649aa5e4263f8e35282-1"></a>$ kerl status
 </pre>
 <ul class="simple">
 <li>Delete a build</li>
 </ul>
-<pre class="code bash"><a name="rest_code_35356f6e8cfd48e68ab69472ebab1fb4-1"></a>$ kerl delete build myotp_17_0
+<pre class="code bash"><a name="rest_code_116ea25aba4545f6815bffae5d97bbf2-1"></a>$ kerl delete build myotp_17_0
 </pre>
 </div>
     </div>
