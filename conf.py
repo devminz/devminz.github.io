@@ -192,6 +192,8 @@ PAGES = (
     ("pages/*.html", "pages", "story.tmpl"),
 )
 
+POSTS = POSTS + (("posts/*.org", "posts", "post.tmpl"),)
+PAGES = PAGES + (("stories/*.org", "stories", "story.tmpl"),)
 
 # Below this point, everything is optional
 
@@ -277,6 +279,7 @@ COMPILERS = {
     # but is disabled by default as it would conflict
     # with many of the others.
     # "pandoc": ('.rst', '.md', '.txt'),
+    "orgmode": ('.org',),
 }
 
 # Create by default posts in one file format?
