@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>kerl : Tool for Erlang/OTP version management | Devminz TechBlog</title>
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
 <link rel="canonical" href="https://devminz.github.io/posts/devops/kerl-tool-for-erlangotp-version-management/">
-<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Devminz">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Devminz">
 <meta property="og:site_name" content="Devminz TechBlog">
 <meta property="og:title" content="kerl : Tool for Erlang/OTP version management">
 <meta property="og:url" content="https://devminz.github.io/posts/devops/kerl-tool-for-erlangotp-version-management/">
@@ -21,77 +22,30 @@ T">
 <meta property="article:published_time" content="2017-05-11T16:17:07+05:30">
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <section class="social"><ul>
+<li><a href="../../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://twitter.com/devminz" title="@Twitter"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://github.com/devminz" title="@Github"><i class="icon-github"></i></a></li>
 
-<!-- Menubar -->
+        </ul></section><section class="page-content"><div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">kerl : Tool for Erlang/OTP version management</h1>
 
-<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://devminz.github.io/">
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2017-05-11T16:17:07+05:30">2017-05-11 16:17</time>
+            
+                      |  
+        <a href="index.rst" id="sourcelink">Source</a>
 
-                <span id="blog-title">Devminz TechBlog</span>
-            </a>
+            </div>
+            
         </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
-            <ul class="nav navbar-nav">
-<li>
-<a href="../../../archive.html">Archive</a>
-                </li>
-<li>
-<a href="../../../categories/">Tags</a>
-                </li>
-<li>
-<a href="../../../rss.xml">RSS feed</a>
-
-                
-            </li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-    <a href="index.rst" id="sourcelink">Source</a>
-    </li>
-
-                
-            </ul>
-</div>
-<!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        <div class="row">
-            
-            
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">kerl : Tool for Erlang/OTP version management</a></h1>
-
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                    Devminz
-            </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-05-11T16:17:07+05:30" itemprop="datePublished" title="2017-05-11 16:17">2017-05-11 16:17</time></a></p>
-                <p class="commentline">
-        
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/devops/kerl-tool-for-erlangotp-version-management.html">Comments</a>
-
-
-            
-        </p>
-<p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
-
-        </div>
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+        <div class="body">
+            <div>
 <p>Like rvm for Ruby and virtualenv for Python we have now kerl for Erlang/OTP.
 kerl allows to install and manage multiple OTP versions. kerl is written as
 a shell script and does not depend on Erlang.</p>
@@ -162,11 +116,9 @@ a shell script and does not depend on Erlang.</p>
 <pre class="code bash"><a name="rest_code_116ea25aba4545f6815bffae5d97bbf2-1"></a>$ kerl delete build myotp_17_0
 </pre>
 </div>
-    </div>
-    <aside class="postpromonav"><nav></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        </div>
         
-        
-        <div id="disqus_thread"></div>
+                            <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="devminzgithubio",
             disqus_url="https://devminz.github.io/posts/devops/kerl-tool-for-erlangotp-version-management/",
@@ -185,21 +137,15 @@ a shell script and does not depend on Erlang.</p>
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="devminzgithubio";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
-</div>
-        <!--End of body content-->
-
-        <footer id="footer">
-            Contents © 2017         <a href="mailto:devminz.github.io">Devminz</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+        
+    </div>
+               <script>var disqus_shortname="devminzgithubio";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2017         <a href="mailto:devminz.github.io">Devminz</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
- <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+ <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
             
         </footer>
 </div>
-</div>
-
-
-            <script src="../../../assets/js/all-nocdn.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+    </section><script src="../../../assets/js/all-nocdn.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
 <a class="addthis_button_more">Share</a>
 <ul>
 <li>
@@ -216,9 +162,10 @@ a shell script and does not depend on Erlang.</p>
 </li>
 </ul>
 </div>
-<script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates -->
+<script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
 </body>
 </html>
