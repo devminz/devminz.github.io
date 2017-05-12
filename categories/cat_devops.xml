@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Devminz TechBlog</title><link>https://devminz.github.io/</link><description>Techology Blog by Devminz</description><atom:link href="https://devminz.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2017 &lt;a href="mailto:devminz.github.io"&gt;Devminz&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Devminz TechBlog (Posts about devops)</title><link>https://devminz.github.io/</link><description></description><atom:link href="https://devminz.github.io/categories/cat_devops.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2017 &lt;a href="mailto:devminz.github.io"&gt;Devminz&lt;/a&gt; 
  &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
  &lt;img alt="Creative Commons License BY-NC-SA"
  style="border-width:0; margin-bottom:12px;"
@@ -85,61 +85,4 @@ ping -c &lt;span class="m"&gt;4&lt;/span&gt;  &lt;span class="m"&gt;192&lt;/span
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>virtualization virtualbox vboxmanage</category><guid>https://devminz.github.io/posts/devops/virtualbox-cli-vm-bridged-networking/</guid><pubDate>Fri, 12 May 2017 05:53:09 GMT</pubDate></item><item><title>kerl : Tool for Erlang/OTP version management</title><link>https://devminz.github.io/posts/devops/kerl-tool-for-erlangotp-version-management/</link><dc:creator>Devminz</dc:creator><description>&lt;div&gt;&lt;p&gt;Like rvm for Ruby and virtualenv for Python we have now kerl for Erlang/OTP.
-kerl allows to install and manage multiple OTP versions. kerl is written as
-a shell script and does not depend on Erlang.&lt;/p&gt;
-&lt;p&gt;The Github Repo is  &lt;a class="reference external" href="https://github.com/yrashk/kerl"&gt;https://github.com/yrashk/kerl&lt;/a&gt;&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;Installing kerl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b9ebc6124f5c414f95ad0e682ea0ad6f-1"&gt;&lt;/a&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /usr/local/bin
-&lt;a name="rest_code_b9ebc6124f5c414f95ad0e682ea0ad6f-2"&gt;&lt;/a&gt;$ sudo curl -O https://raw.githubusercontent.com/yrashk/kerl/master/kerl
-&lt;a name="rest_code_b9ebc6124f5c414f95ad0e682ea0ad6f-3"&gt;&lt;/a&gt;$ sudo chmod a+x kerl
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;List available releases&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_021f39a774c6470fb5a4f2abc29edaa8-1"&gt;&lt;/a&gt;$ kerl list releases
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Update list of available releases&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_524545767b0f4bdcb18c522dbe8a5766-1"&gt;&lt;/a&gt;$ kerl update releases
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Build a release&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_64845aa0a2f741adb71baaa2ef5d61d0-1"&gt;&lt;/a&gt;$ kerl  build  &lt;span class="m"&gt;17&lt;/span&gt;.0  myotp_17_0
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Listing available builds&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b2d96e4ac2a74376bcd8f0bd41130f7b-1"&gt;&lt;/a&gt;$ kerl  list builds
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Installing a build&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_cdb90dd0c713409480c2a4c2c5209cee-1"&gt;&lt;/a&gt;$ mkdir -p /home/me/my_otp_installations/17_0
-&lt;a name="rest_code_cdb90dd0c713409480c2a4c2c5209cee-2"&gt;&lt;/a&gt;$ kerl  install myotp_17_0 /home/me/my_otp_installations/17_0
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Listing installations&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ca4b4e35b1be47d5a27701ffcf90d9c6-1"&gt;&lt;/a&gt;$ kerl list installations
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Use/activate a version of OTP&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b641510af7ad483e9db02bc4db5681c0-1"&gt;&lt;/a&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; /path/to/installation/dir/activate
-&lt;a name="rest_code_b641510af7ad483e9db02bc4db5681c0-2"&gt;&lt;/a&gt;$ &lt;span class="c1"&gt;# Example&lt;/span&gt;
-&lt;a name="rest_code_b641510af7ad483e9db02bc4db5681c0-3"&gt;&lt;/a&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; /home/me/my_otp_installations/17_0/activate
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Deactivate/stop using for now, a version of OTP&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_37a8af97040f437ab8377972162a6185-1"&gt;&lt;/a&gt;$ kerl_deactivate
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Find out which OTP version is active&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c9a891e70d484ac384f4fe9e8be54361-1"&gt;&lt;/a&gt;$ kerl active
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Get details kerl installation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_5892e10121e24649aa5e4263f8e35282-1"&gt;&lt;/a&gt;$ kerl status
-&lt;/pre&gt;&lt;ul class="simple"&gt;
-&lt;li&gt;Delete a build&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_116ea25aba4545f6815bffae5d97bbf2-1"&gt;&lt;/a&gt;$ kerl delete build myotp_17_0
-&lt;/pre&gt;&lt;/div&gt;</description><guid>https://devminz.github.io/posts/devops/kerl-tool-for-erlangotp-version-management/</guid><pubDate>Thu, 11 May 2017 10:47:07 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>virtualization virtualbox vboxmanage</category><guid>https://devminz.github.io/posts/devops/virtualbox-cli-vm-bridged-networking/</guid><pubDate>Fri, 12 May 2017 05:53:09 GMT</pubDate></item></channel></rss>

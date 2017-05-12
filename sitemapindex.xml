@@ -6,15 +6,23 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://devminz.github.io/categories/cat_devops.xml</loc>
+  <lastmod>2017-05-12T06:57:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://devminz.github.io/categories/virtualization-virtualbox-vboxmanage.xml</loc>
+  <lastmod>2017-05-12T06:57:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://devminz.github.io/galleries/rss.xml</loc>
   <lastmod>2017-05-11T17:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://devminz.github.io/rss.xml</loc>
-  <lastmod>2017-05-11T16:06:00Z</lastmod>
+  <lastmod>2017-05-12T06:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://devminz.github.io/sitemap.xml</loc>
-  <lastmod>2017-05-11T17:01:00Z</lastmod>
+  <lastmod>2017-05-12T06:57:00Z</lastmod>
  </sitemap>
 </sitemapindex>
