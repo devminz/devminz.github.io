@@ -69,3 +69,18 @@ ifconfig eth0 192.168.222.2 netmask 255.255.255.0
 ping -c 4  192.168.222.1 
 #+end_src
 
+** Stop and remove the vm   
+*** Stop and Remove the VM 
+
+#+begin_src sh 
+# this will power-off the vm 
+vboxmanage controlvm vmtest poweroff  
+# this deletes the vm 
+vboxmanage unregistervm vmtest --delete  
+#+end_src
+
+*** Remove the bridge interface
+ #+begin_src sh 
+ifconfig vmtestbr1 0.0.0.0 down 
+brctl delbr vmtestbr1
+#+end_src
