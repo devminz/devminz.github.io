@@ -1,0 +1,71 @@
+#+BEGIN_COMMENT
+.. title: Virtualbox bridged networking CLI Example
+.. slug: virtualbox-cli-vm-bridged-networking
+.. date: 2017-05-12 11:23:09 UTC+05:30
+.. tags: virtualization virtualbox vboxmanage
+.. category: devops
+.. link: 
+.. description: Create virtualbox vm using vboxmanage and use bridge network.
+.. type: text
+#+END_COMMENT
+
+* Introduction
+ In this article we will see how to create a virtualbox vm using command line and 
+ use bridged networking.  I am using slax 64 bit live iso for this example
+
+* Creating the virtual machine 
+
+** Download slax iso
+#+begin_src sh 
+mkdir  /tmp/vmtest 
+cd /tmp/vmtest 
+wget http://ftp.linux.cz/pub/linux/slax/Slax-7.x/7.0.8/slax-English-US-7.0.8-x86_64.iso
+#+end_src
+
+** Create the bridge interface in host os 
+#+begin_src sh 
+brctl addbr vmtestbr1 
+ifconfig  vmtestbr1 192.168.222.1  netmask 255.255.255.0 up 
+ping -c 2 192.168.222.1  
+#+end_src
+
+** Create the VM using vboxmanage  
+#+begin_src sh 
+# Register the VM 
+VBoxManage createvm --name "vmtest" --register 
+# Configure VM settings  
+VBoxManage modifyvm vmtest --ostype  "Linux26_64" --memory 4096 --acpi on --cpus 1  --description "VM Test"
+# Declare a bridge interface 
+VBoxManage modifyvm vmtest --nic1 bridged --nictype1 82545EM --bridgeadapter1 vmtestbr1
+# VRDE is for access via rdp client
+VBoxManage modifyvm vmtest --vrde on 
+# Create an HDD 
+VBoxManage createhd --filename /tmp/vmtest/vmtest.vdi --size 10000
+# Add an HDD Controller 
+VBoxManage storagectl vmtest --name "IDE Controller" --add ide
+# Map the HDD and ISO via IDE Controller
+VBoxManage storageattach vmtest --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium  /tmp/vmtest/vmtest.vdi 
+VBoxManage storageattach vmtest --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium /tmp/vmtest/slax-English-US-7.0.8-x86_64.iso
+# Boot from DVD 
+VBoxManage modifyvm vmtest --boot1 dvd
+#+end_src
+
+** Start the VM  
+#+begin_src sh 
+# for a remote vm use headless to access the vm via rdp 
+vboxmanage startvm vmtest --headless
+## for a local vm  access via GUI 
+# vboxmanage startvm vmtest 
+#+end_src
+
+** Ping from guest to host 
+
+A remote desktop client like Remina ( Ubuntu ) can be used to access the vm desktop.
+On VM desktop open a console and verify bridge networking.
+#+begin_src sh 
+ifconfig -a  
+# interface name may be different 
+ifconfig eth0 192.168.222.2 netmask 255.255.255.0
+ping -c 4  192.168.222.1 
+#+end_src
+
