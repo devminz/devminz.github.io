@@ -60,7 +60,7 @@ vboxmanage startvm vmtest --headless
 
 ** Ping from guest to host 
 
-A remote desktop client like Remina ( Ubuntu ) can be used to access the vm desktop.
+A remote desktop client like [[https://www.remmina.org/wp/][Remina]] ( Ubuntu ) can be used to access the vm desktop.
 On VM desktop open a console and verify bridge networking.
 #+begin_src sh 
 ifconfig -a  
